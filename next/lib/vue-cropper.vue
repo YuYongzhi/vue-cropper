@@ -297,7 +297,7 @@ export default defineComponent({
       default: "contain"
     },
     //限制最小区域,可传1以上的数字和字符串，限制长宽都是这么大
-    // 也可以传数组[90,90] 
+    // 也可以传数组[90,90]
     limitMinSize: {
       type: [Number, Array, String],
       default: () => {
@@ -415,7 +415,7 @@ export default defineComponent({
   },
   methods: {
     getVersion (name) {
-      var arr = navigator.userAgent.split(' '); 
+      var arr = navigator.userAgent.split(' ');
       var chromeVersion = '';
       let result = 0;
       const reg = new RegExp(name, 'i')
@@ -454,12 +454,12 @@ export default defineComponent({
          }
         }
       }
-      
+
       // alert(`当前处理的orientation${orientation}`)
       let canvas = document.createElement("canvas");
       let ctx = canvas.getContext("2d");
       ctx.save();
-      
+
       switch (orientation) {
         case 2:
           canvas.width = width;
@@ -546,7 +546,7 @@ export default defineComponent({
       let img = new Image();
       img.onload = () => {
         if (this.img === "") {
-          this.$emit("img-load", "error");
+          this.$emit("imgLoad", "error");
           return false;
         }
 
@@ -574,7 +574,7 @@ export default defineComponent({
       };
 
       img.onerror = () => {
-        this.$emit("img-load", "error");
+        this.$emit("imgLoad", "error");
       };
 
       // 判断如果不是base64图片 再添加crossOrigin属性，否则会导致iOS低版本(10.2)无法显示图片
@@ -953,7 +953,7 @@ export default defineComponent({
           this.canChangeY = 0;
         }
       }
-      this.$emit('change-crop-size', {
+      this.$emit('changeCropSize', {
         width: this.cropW,
         height: this.cropH
       })
@@ -1125,7 +1125,7 @@ export default defineComponent({
       } else {
         limitMinNum = limitMinSize
       }
-      
+
       //限制最小宽度和高度
       cropW = parseFloat(limitMinNum[0])
       cropH = parseFloat(limitMinNum[1])
@@ -1137,6 +1137,10 @@ export default defineComponent({
       window.removeEventListener("mouseup", this.changeCropEnd);
       window.removeEventListener("touchmove", this.changeCropNow);
       window.removeEventListener("touchend", this.changeCropEnd);
+      this.$emit('changeCropSizeEnd', {
+        width: this.cropW,
+        height: this.cropH
+      });
     },
     // 根据比例x/y，最小宽度，最小高度，现有宽度，现有高度，得到应该有的宽度和高度
     calculateSize(x, y, minX, minY, w, h) {

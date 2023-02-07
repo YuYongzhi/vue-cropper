@@ -44,7 +44,7 @@ module.exports = {
 ```
 
 
-### 2. 引入 Vue Cropper 
+### 2. 引入 Vue Cropper
 `Vue 3` 组件内引入
 ```bash
 npm install vue-cropper@next
@@ -54,7 +54,7 @@ import { VueCropper }  from "vue-cropper";
 
 `Vue3` 全局引入
 ```js
-import VueCropper from 'vue-cropper'; 
+import VueCropper from 'vue-cropper';
 import 'vue-cropper/dist/index.css'
 
 const app = createApp(App)
@@ -64,7 +64,7 @@ app.mount('#app')
 
 `Vue3 CDN` 方式引入
 ```html
-<style type="text/css" src="https://cdn.jsdelivr.net/npm/vue-cropper@1.0.2/dist/index.css"></style> 
+<style type="text/css" src="https://cdn.jsdelivr.net/npm/vue-cropper@1.0.2/dist/index.css"></style>
 ```
 
 ```js
@@ -77,7 +77,7 @@ app.component('vue-cropper', window['vue-cropper'].VueCropper);
 
 `Vue2` 组件内引入
 ```js
-import { VueCropper }  from 'vue-cropper' 
+import { VueCropper }  from 'vue-cropper'
 components: {
   VueCropper
 }
@@ -161,6 +161,7 @@ mode | 图片默认渲染方式 | `contain` | `contain` , `cover`, `100px`, `100
 - `@imgMoving`  图片移动回调函数
 - `@cropMoving` 截图框移动回调函数
 - `@imgLoad`  图片加载的回调, 返回结果 `success`,  `error`
+- `@changeCropSizeEnd` 修改截图框大小结束的回调函数
 
 #### @realTime 实时预览事件
 ```js
@@ -214,14 +215,14 @@ realTime(data) {
   </div>
 </div>
 <p>中等大小</p>
-<div :style="previewStyle1"> 
+<div :style="previewStyle1">
   <div :style="previews.div">
     <img :src="previews.url" :style="previews.img">
   </div>
 </div>
 
 <p>迷你大小</p>
-<div :style="previewStyle2"> 
+<div :style="previewStyle2">
   <div :style="previews.div">
     <img :src="previews.url" :style="previews.img">
   </div>
@@ -291,7 +292,7 @@ this.$refs.cropper.rotateLeft() | 向左边旋转90度
 ```js
 this.$refs.cropper.getCropData(data => {
   // do something
-  console.log(data)  
+  console.log(data)
 })
 ```
 
@@ -299,7 +300,7 @@ this.$refs.cropper.getCropData(data => {
 ```js
 this.$refs.cropper.getCropBlob(data => {
   // do something
-  console.log(data)  
+  console.log(data)
 })
 ```
 

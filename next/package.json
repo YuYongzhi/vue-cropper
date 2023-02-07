@@ -1,5 +1,5 @@
 {
-  "name": "vue-cropper",
+  "name": "maitao-vue-cropper",
   "version": "1.0.7",
   "description": "A simple Vue picture clipping plugin",
   "keywords": [
@@ -14,14 +14,14 @@
   "typings": "./lib/typings/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xyxiao001/vue-cropper.git"
+    "url": "git+https://github.com/YuYongzhi/vue-cropper.git"
   },
-  "author": "xyxiao001",
+  "author": "YuYongzhi",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/xyxiao001/vue-cropper/issues"
+    "url": "https://github.com/YuYongzhi/vue-cropper/issues"
   },
-  "homepage": "https://github.com/xyxiao001/vue-cropper#readme",
+  "homepage": "https://github.com/YuYongzhi/vue-cropper#readme",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
